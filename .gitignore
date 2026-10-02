@@ -1,0 +1,9 @@
+/build*/
+/data/
+/deps/
+/third_party/
+*.ppm
+*.bmp
+*.part
+__pycache__/
+*.py[cod]

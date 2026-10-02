@@ -1,0 +1,6 @@
+# Preserve prepared binary asset bytes across platforms.
+assets/*.rgb binary
+assets/*.rgba binary
+assets/*.gray binary
+assets/*.dem binary
+assets/*.mesh binary

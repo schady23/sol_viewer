@@ -1,0 +1,262 @@
+PDS_VERSION_ID          = PDS3
+RECORD_TYPE             = STREAM
+OBJECT                  = TEXT
+  PUBLICATION_DATE      = 2017-05-12
+  NOTE                  = "This file describes known errors or
+                           deficiencies in this archive volume set."
+END_OBJECT              = TEXT
+END
+
+Users are encouraged to provide comments back to the Imaging Node
+of the PDS if errors or omissions are found either in data or in
+documentation. Please send comments by e-mail or U.S. mail to the
+Imaging Node PDS Operator:
+
+    PDS - Flagstaff Imaging Node
+    United states Geological Survey
+    2255 North Gemini Drive
+    Flagstaff, AZ  86001
+
+    Electronic mail address: pdsmgr@usgs.gov
+
+
+An updated version of this file is maintained online at the Imaging
+Node of the Planetary Data System. The online errata list can be found
+there on the World Wide Web at
+
+   http://pdsimg.jpl.nasa.gov/
+
+
+This file, ERRATA.TXT, contains release notes and errata concerning the
+MESSENGER MDIS Digital Elevation Model (DEM) archive.
+
+Section A of this file contains an entry for the MESSENGER release with
+general information about the contents of the release, in order from newest
+to oldest.  There is only one release of the MDIS DEM products.
+
+Section B of this file contains general notes, if any, concerning the archive
+as a whole.
+
+
+******** SECTION A ********
+RELEASE NUMBER: 16
+RELEASE DATE:  2017-05-12
+DATA COVERAGE: 2011-03-29 to 2015-03-17 (Mercury Orbit, Mercury Orbit Year 2,
+Mercury Orbit Year 3, Mercury Orbit Year 4)
+PRODUCT TYPES RELEASED FOR THIS ARCHIVE: MDIS DLR DEM
+PRODUCT TYPES UPDATED FOR THIS ARCHIVE: MDIS DLR DEM JPEG2000
+
+1. This release consists of three additional quadrangle-based DEM products
+provided by the German Aerospace Center (DLR). These cover the H03, H05, and
+H07 quadrangles. Additional DEM products covering the H03 and H05
+quadrangles in lambert conformal map projection are provided.
+
+2. The directory structure for the DEM products volume is slightly
+reorganized. Directories to contain the DLR quadrangle-based products are 
+added. The following directories are added to the volume:
+DEM/QUAD/IMG
+DEM/QUAD/JPEG2000
+EXTRAS/QUAD
+
+3. The REGIONAL/JPEG2000 directory is removed from the volume.
+
+4. The files MSGR_DEM_DLR_EQ_H06_DM_222_*_V01.* in the REGIONAL directories
+are replaced by MSGR_DEM_DLR_SC_H06_DM_222_*_V02.* in the new QUAD
+directories and renamed to indicate a simple cylindrical projection. The V01
+IMG file of this set is not changed, only renamed.
+
+No changes are made to the directories containing the USGS and ASU DEMs.
+
+--------------------------------------------------------------------------
+
+RELEASE NUMBER: October 2016 Update
+RELEASE DATE:  2016-12-01
+DATA COVERAGE: 2011-03-29 to 2015-03-17 (Mercury Orbit, Mercury Orbit Year 2,
+Mercury Orbit Year 3, Mercury Orbit Year 4)
+PRODUCT TYPES RELEASED FOR THIS ARCHIVE: None
+PRODUCT TYPES UPDATED FOR THIS ARCHIVE: MDIS ASU DEM
+
+ASU DEMs
+1. The ASU DEM products are reproduced using the mission approved PCK data
+with a Mercury radius of 2,439.4 km. These ASU DEMs completely supplant those
+from release 15. A few new ASU DEMs are included as well as the reproduced
+ones.
+
+2. All ASU DEM products are assigned version 06 (V06) in this release so as
+to be clear that they supersede all earlier ones.
+
+3. There is a change to the naming convention for the ASU DEM orthorectified
+images (orthophotos). Previously, multiple takes of each image were
+differentiated by the version numbers in the filenames and PRODUCT_IDs. Since
+this was not consistent with the meaning of the version numbers in the other
+products in the volume, the different takes of the orthorectified images are
+now distinguished by the product type field (characters 25-26) in the
+filenames and PRODUCT_IDs. What was previously "_OR_" is now "_O1_" or "_O2_"
+depending on the image. 
+For example, MSGR_DEM_ASU_EQ_SANDR05_OR_160_I_V02 becomes
+MSGR_DEM_ASU_EQ_SANDR05_O2_160_I_V06.
+
+4. There are now exactly two orthorectified images for each single stereo pair
+feature DEM product set (e.g., KERTS01) and one for each mosaic product set
+(e.g., KERTSMS).
+
+--------------------------------------------------------------------------
+
+RELEASE NUMBER: September 2016 Update
+RELEASE DATE:  2016-09-01
+DATA COVERAGE: 2011-03-29 to 2015-03-17 (Mercury Orbit, Mercury Orbit Year 2,
+Mercury Orbit Year 3, Mercury Orbit Year 4)
+PRODUCT TYPES RELEASED FOR THIS ARCHIVE: None
+PRODUCT TYPES UPDATED FOR THIS ARCHIVE: MDIS USGS DEM
+
+1. This is an update to the USGS global and polar DEMs delivered in MESSENGER
+PDS release 15. A preliminary version of the USGS global DEM
+(MSGR_DEM_USG_SC_I_V01.IMG) was inadvertently released in the May 6, 2016
+release to the public. The new version 2 data products included in this
+release update are the correct versions corresponding to the DEM that was used
+to create all the cartographic maps in the May 6, 2016 PDS release. The main
+difference in the USGS DEM version 2 products provided in this update is they
+are derived using a 1-sigma filter applied to the point cloud when processing
+each output pixel. Version 1 did not have this filter applied. It has been
+confirmed that version 2 of the USGS DEM was used in the derivation of MDIS
+and MASCS map products where it is indicated that the USGS DEM was used in the
+creation of those products. None of those products are affected by this
+release.
+
+2. Version 1 of the USGS polar DEM products (MSGR_DEM_USG_NP_I_V01.IMG and
+MSGR_DEM_USG_SP_I_V01.IMG), were derived (i.e., projected) from the version
+1 of the USGS global DEM. Version 2 of both the USGS north and south polar DEM
+products are independently derived using the same technique as the Version 2
+USGS global DEM.
+
+3. The USGS global DEM label keyword DATA_SET_MAP_PROJECTION refers to the
+DEM_EQU_MAP.CAT catalog file describing the Equirectangular projection.
+However, it should be noted that the Simple Cylindrical projection used in
+this Version 2 global DEM is compatible with the Equirectangular projection
+with a center latitude of projection of 0 (zero), and therefore applies to
+this DEM.
+
+4. The EXTRAS/ISIS products have been updated to be consistent with version 2
+of the USGS DEMs. Additional detached ISIS labels have been added to provide
+radius values (MSGR_DEM_USG_<pp>_I_V02.IMG.radius.lbl) in addition to labels
+providing elevations (MSGR_DEM_USGS_<pp>_I_V02.IMG.lbl). <pp> is the type of
+projection, simple cylindrical (SC), North polar stereographic (NP), or south
+polar stereographic (SP). See EXTRAS/EXTRINFO.TXT for instructions on how to
+create an ISIS-compatible DEM product that can be used a shape model for
+Mercury.
+
+5. The following products are redelivered and replace the V01 versions
+provided in release 15:
+DEM/GLOBAL/IMG/MSGR_DEM_USG_SC_I_V02
+DEM/GLOBAL/JPEG200/MSGR_DEM_USG_SC_J_V02
+DEM/POLAR/IMG/MSGR_DEM_USG_NP_I_V02
+DEM/POLAR/IMG/MSGR_DEM_USG_SP_I_V02
+DEM/POLAR/JPEG2000/MSGR_DEM_USG_NP_J_V02
+DEM/POLAR/JPEG2000/MSGR_DEM_USG_SP_J_V02
+
+All products in the EXTRAS/ISIS/ directory:
+DEM/EXTRAS/ISIS/MSGR_DEM_USG_SC_I_V02.*
+DEM/EXTRAS/ISIS/MSGR_DEM_USG_NP_I_V02.*
+DEM/EXTRAS/ISIS/MSGR_DEM_USG_SP_I_V02.*
+
+Note that the following products are unchanged and not redelivered in this
+release:
+DEM/GLOBAL/IMG/MSGR_DEM_USG_SC_C_V01
+DEM/GLOBAL/IMG/MSGR_DEM_USG_SC_S_V01
+
+--------------------------------------------------------------------------
+
+RELEASE NUMBER: 15
+RELEASE DATE:  2016-05-06
+DATA COVERAGE: 2011-03-29 to 2015-03-17 (Mercury Orbit, Mercury Orbit Year 2,
+Mercury Orbit Year 3, Mercury Orbit Year 4)
+PRODUCT TYPES RELEASED FOR THIS ARCHIVE: MDIS DEM
+PRODUCT TYPES UPDATED FOR THIS ARCHIVE: None
+
+1. This is the first release for this volume. As of the time of this delivery,
+no additional releases are planned.
+
+
+2. ASU DEMs PCK
+  Many, but not all, of the ASU DEMs were produced using an older version of
+  the SPICE PCK. Therefore, those products will differ in their geographic
+  registration from the other DEMs. 41 out of the 58 ASU DEMs (*_DM_*.IMG)
+  included in this delivery were generated using the older PCK with radius of
+  2,440 km. The remaining 17 DEMs included in this delivery were generated
+  using the newer project designated PCK with planetary radius of 2,439.4 km.
+
+  One can determine which of the products were produced using the older PCK
+  (using the 2,440 km radius) and which the project designated PCK by
+  looking at the planetary radii fields (*_AXIS_RADIUS) in their labels. The
+  products with this issue are:
+
+  MSGR_DEM_ASU_EQ_KERTS01_DM_100_I_V01 MSGR_DEM_ASU_EQ_KERTS02_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_KERTSMS_DM_100_I_V01 MSGR_DEM_ASU_EQ_PARMR01_DM_450_I_V01
+  MSGR_DEM_ASU_EQ_SANDR01_DM_100_I_V01 MSGR_DEM_ASU_EQ_SANDR02_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_SANDR03_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR04_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDR05_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR06_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_SANDR07_DM_100_I_V01 MSGR_DEM_ASU_EQ_SANDR08_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR09_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR10_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDR11_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR12_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDR13_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR14_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR15_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR16_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR17_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR18_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_SANDR19_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR20_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR21_DM_100_I_V01 MSGR_DEM_ASU_EQ_SANDR22_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_SANDR23_DM_100_I_V01 MSGR_DEM_ASU_EQ_SANDR24_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR25_DM_160_I_V01 MSGR_DEM_ASU_EQ_SANDR26_DM_100_I_V01
+  MSGR_DEM_ASU_EQ_SANDR27_DM_150_I_V01 MSGR_DEM_ASU_EQ_SANDR28_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR29_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR30_DM_150_I_V01
+  MSGR_DEM_ASU_EQ_SANDR31_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR32_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDR33_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR34_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDR35_DM_90_I_V01  MSGR_DEM_ASU_EQ_SANDR36_DM_90_I_V01
+  MSGR_DEM_ASU_EQ_SANDRMS_DM_150_I_V01
+
+
+3. ASU DEM Mission Phases and Start/Stop Times
+  The ASU DEMs were generated using data variously collected during the
+  Mercury Orbit through Mercury Orbit Year 4 mission phases. Their labels do
+  not contain MISSION_PHASE_NAME because as regional products, the different
+  products contain data collected at different phases. For the same reasons,
+  the ASU DEM labels contain values of "N/A" in their START_TIME and STOP_TIME
+  fields as time values would not be particularly meaningful. If interested,
+  one may ascertain information about the source data products that were used
+  to create the DEMs from the corresponding
+  MSGR_DEM_ASU_EQ_*_RM_*_S_V<nn>.TXT files located in the EXTRAS/REGIONAL/
+  directory.
+
+
+4. ASU GeoTIFF Products
+  The EXTRAS/REGIONAL directory contains GeoTIFF products (*.TIF) provided by
+  ASU that correspond to their official DEM products. They can be associated
+  with the primary products by their file names and the PRODUCT_IDs in their
+  labels. These are accompanied by PDS label files. PDS standards do not
+  require label files for products in the EXTRAS directory and do not
+  support the TIFF format in any case, except with documents. So these labels
+  are not truly functional PDS labels. However, they contain  useful
+  information about the GeoTIFF products in a form that would be familiar to
+  users of the primary products, so they are included as supporting
+  information.
+
+
+5. DLR DEM
+  There is only one DLR DEM. It covers the H06 "Kuiper" quadrangle
+  [GREELY&BATSON1990], which includes the Hun Kal crater used as a reference
+  point in the Mercury coordinate system. This is mainly due to the volume of
+  data used in processing. For this quadrangle about 7,500 images are used and
+  5.6 billion object points were created.
+
+
+6. USGS DEMs
+  The USGS global and polar JPEG 2000 format DEMs are accompanied by XML files
+  that are useful for GDAL-compatible readers. However, the PDS file naming
+  convention does not allow for filenames directly useable by GDAL as the
+  former dictates a name such as JP2filename_JP2_AUX.XML, but the latter
+  expects JP2filename.jp2.aux.xml. The end user will have to rename the XML
+  files to make them useable by most readers.
+
+
+******** SECTION B ********
+
+This section is provided for general notes concerning the archive as a whole.
+So far there are no general errors or notes to report.

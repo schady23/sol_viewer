@@ -1,0 +1,69 @@
+PDS_VERSION_ID                    = PDS3
+LABEL_REVISION_NOTE               = "Patty Garcia, 2014-12-01, created;
+                                     JHUAPL:M. Reid, revised, 2016-03-24."
+RECORD_TYPE                       = "STREAM"
+INSTRUMENT_HOST_NAME              = "MESSENGER"
+INSTRUMENT_NAME                   = {"MERCURY DUAL IMAGING SYSTEM
+                                     WIDE ANGLE CAMERA",
+                                     "MERCURY DUAL IMAGING SYSTEM
+                                     NARROW ANGLE CAMERA"}
+INSTRUMENT_ID                     = {"MDIS-WAC","MDIS-NAC"}
+TARGET_NAME                       = MERCURY
+OBJECT                            = DATA_SET_MAP_PROJECTION
+DATA_SET_ID                       = "MESS-H-MDIS-5-DEM-ELEVATION-V1.0"
+  OBJECT                          = DATA_SET_MAP_PROJECTION_INFO
+    MAP_PROJECTION_TYPE           = "EQUIRECTANGULAR"
+    MAP_PROJECTION_DESC           = "The adopted projection convention is
+      planetocentric, positive east. 
+      
+      The transformation from line and sample coordinates to
+      planetocentric latitude and longitude is given by these equations:
+
+      LINE = int(LINE_PROJECTION_OFFSET - lat*MAP_RESOLUTION)
+      SAMPLE = int(SAMPLE_PROJECTION_OFFSET - lon*MAP_RESOLUTION)
+
+      where lat = latitude and lon = longitude.
+      Note that integral values of line and sample correspond to the center of
+      a pixel. Lat and lon are the latitude and longitude of a given location
+      on the surface, positive east.
+
+      MAP_RESOLUTION = the map resolution in pixels per degree of varying
+      resolution for the DEM data products contained in this archive.
+
+      LINE_PROJECTION_OFFSET = the line offset value of the map projection
+      origin from the line and sample 1,1 (line and sample 1,1 is considered
+      the upper left corner of the digital array). For an EQUIRECTANGULAR map
+      projection, origin is TBD. The value of LINE_PROJECTION_OFFSET is
+      positive north of the equator and is negative south of the equator. 
+
+      SAMPLE_PROJECTION_OFFSET = the sample offset value of the map projection
+      origin from line and sample 1,1 (line and sample 1,1 is considered the
+      upper left corner of the digital array).  For an EQUIRECTANGULAR map
+      projection, the value of SAMPLE_PROJECTION_OFFSET is positive west of
+      the projection longitude and is negative east of the projection
+      longitude. 
+      
+      MAP_SCALE is measured in km/pixel.
+
+      The simple cylindrical projection is a special case of the
+      equirectangular projection where the center latitude is 0.
+      
+      CENTER_LATITUDE is also the latitude of true scale.
+            
+      Definitions of other mapping parameters can be found in the PDS Data 
+      Dictionary."
+
+    ROTATIONAL_ELEMENT_DESC = "See [SEIDELMANNETAL2002]."
+
+    OBJECT                          = DS_MAP_PROJECTION_REF_INFO
+      REFERENCE_KEY_ID               = "SEIDELMANNETAL2002"
+    END_OBJECT                      = DS_MAP_PROJECTION_REF_INFO
+
+    OBJECT                          = DS_MAP_PROJECTION_REF_INFO
+      REFERENCE_KEY_ID               = "SNYDER1987" 
+    END_OBJECT                      = DS_MAP_PROJECTION_REF_INFO
+
+  END_OBJECT                      = DATA_SET_MAP_PROJECTION_INFO
+END_OBJECT                        = DATA_SET_MAP_PROJECTION
+
+END
